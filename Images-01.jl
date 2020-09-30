@@ -776,13 +776,13 @@ grant = decimate(process_raw_camera_data(raw_camera_data), 2)
 # ╟─8004d076-e93b-11ea-29cc-a1bfcc75e87f
 # ╠═3ac63296-e936-11ea-2144-f94bdbd60eaf
 # ╠═3e3f841a-e936-11ea-0a81-1b95fe0faa83
-# ╟─5978db50-e936-11ea-3145-059a51be2281
+# ╠═5978db50-e936-11ea-3145-059a51be2281
 # ╠═21638b14-ebcc-11ea-1761-bbd2f4306a96
-# ╟─70cb0e36-e936-11ea-3ade-49fde77cb696
+# ╠═70cb0e36-e936-11ea-3ade-49fde77cb696
 # ╠═b3ea975e-e936-11ea-067d-81339575a3cb
 # ╟─918a0762-e93b-11ea-1115-71dbfdb03f27
 # ╠═daabe66c-e937-11ea-3bc3-d77f2bce406c
-# ╟─095ced62-e938-11ea-1169-939dc7136fd0
+# ╠═095ced62-e938-11ea-1169-939dc7136fd0
 # ╠═31f3605a-e938-11ea-3a6d-29a185bbee31
 # ╠═2744a556-e94f-11ea-2434-d53c24e59285
 # ╟─98412a36-e93b-11ea-1954-f1c105c6ed4a

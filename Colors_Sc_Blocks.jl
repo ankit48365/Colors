@@ -140,45 +140,125 @@ An image is just a matrix, so we can manipulate *matrices* to manipulate the *im
 ]
 
 # ╔═╡ 0aa58c50-02c0-11eb-1608-d1ec9abe94c6
-
+	md"""	Create  Copy of Image (Good Habbit, Before Altering an Image)	"""
 
 # ╔═╡ 0a8a3c20-02c0-11eb-15e2-6d41dab0deee
-
+Dhwaj = copy(Tricolor)
 
 # ╔═╡ 0a6ca200-02c0-11eb-0619-c1f7c9c51fb3
-
+md"""## Syntax for three main colors - Red Green Blue"
+red = RGB(1, 0, 0)   |  
+green = RGB(0, 1, 0)  |  
+blue = RGB(0, 0, 1)
+"""
 
 # ╔═╡ 0a519ff0-02c0-11eb-31e9-433a6762996c
+red = RGB(1, 0, 0)
 
+# ╔═╡ b273ab10-031a-11eb-2068-0796513e64c7
+green = RGB(0, 1, 0)
+
+# ╔═╡ 96c2e480-031a-11eb-29c3-b97cef4ae152
+blue = RGB(0, 0, 1)
 
 # ╔═╡ 0a3676d0-02c0-11eb-0510-e7536424f8b7
+	md"""## Experiment - Changing Color
+By Using Loop
 
+
+Note that for loops do not return anything (or, rather, they return nothing)"""
 
 # ╔═╡ 0a192ace-02c0-11eb-1e3f-b5ff3970f610
-
-
-# ╔═╡ 09feec10-02c0-11eb-2e6e-0b683abcdd35
-
-
-# ╔═╡ 09e65b00-02c0-11eb-33d7-99193d98136e
-
+for i in 1:20
+	for j in 1:20
+		Dhwaj[i, j] = red
+	end
+end
 
 # ╔═╡ 09c9ab40-02c0-11eb-2e14-294da8b643b4
-
+for i in 70:100
+	for j in 20:40
+		Dhwaj[i, j] = blue
+	end
+end
 
 # ╔═╡ 09ad70b0-02c0-11eb-1982-7f86a152b7b5
-
+Dhwaj
 
 # ╔═╡ 09922080-02c0-11eb-2d95-83e9fbe98d7a
+	md"""## Element-wise operations: "Broadcasting"
 
+- Julia provides powerful technology for operating element by element: **broadcasting** 
+
+- Adding "`.`" applies an operation element by element
+"""
 
 # ╔═╡ 09798f6e-02c0-11eb-09e0-3feb2b5a9048
-
+begin 
+	Dhwaj2 = copy(Tricolor)
+	Dhwaj2[40:60, 60:80] .= RGB(0, 1, 0)
+	Dhwaj2
+end
 
 # ╔═╡ 095bce40-02c0-11eb-309a-7b4fda24cd8c
+md"## Modifying the whole image at once
+**Left this Section for Now**
+- We can use the same trick to modify the whole image at once
 
+- Let's **redify** the image
+
+- We define a **function** that turns a colour into just its red component
+"
 
 # ╔═╡ 0940cc30-02c0-11eb-252c-37c67ae8008e
+
+
+# ╔═╡ 21609f00-031c-11eb-2c4e-c7f936df961f
+
+
+# ╔═╡ 2146ae60-031c-11eb-10cf-6d0f7a5519ff
+
+
+# ╔═╡ 212b3722-031c-11eb-1002-c1d8a1e1cff2
+
+
+# ╔═╡ 2110d150-031c-11eb-3ed4-4fc761239518
+
+
+# ╔═╡ 20f53300-031c-11eb-346c-555291725aa3
+
+
+# ╔═╡ 20d994b0-031c-11eb-2907-453907e22de5
+
+
+# ╔═╡ 20c23c20-031c-11eb-2436-4314f4dcd2dd
+
+
+# ╔═╡ 20a676c0-031c-11eb-1099-d1a36f99bf9d
+
+
+# ╔═╡ 208f935e-031c-11eb-172e-bf3a2463720c
+
+
+# ╔═╡ 207888f2-031c-11eb-1800-5b0d98072ef8
+
+
+# ╔═╡ 205c4e60-031c-11eb-1a04-4ba53bbe3cc4
+
+
+# ╔═╡ 2044cec2-031c-11eb-38c8-d3f806df0607
+
+
+# ╔═╡ 202ba170-031c-11eb-1cb2-5926b842e1f1
+
+
+# ╔═╡ 20135e80-031c-11eb-1e42-459731477aa8
+
+
+# ╔═╡ 1ff83560-031c-11eb-19f0-83458298f9ec
+
+
+# ╔═╡ 1fde44c0-031c-11eb-33c8-87df48b53597
 
 
 # ╔═╡ d527bab0-02bc-11eb-3ef2-61490bf35dab
@@ -210,21 +290,21 @@ RGBX(0.9, 0.9, 0.9)
 # ╟─ec7bfd20-fe57-11ea-11ff-ad7d1063c690
 # ╟─3e2b6a10-02b9-11eb-2026-5b14f80e3d02
 # ╟─ec64cba0-fe57-11ea-0a43-296a76f4e41f
-# ╠═64efe220-02b9-11eb-33a9-05fc5c343994
+# ╟─64efe220-02b9-11eb-33a9-05fc5c343994
 # ╟─ec4ef9b0-fe57-11ea-3218-19d3eb36b629
-# ╟─e72eb300-fe69-11ea-0295-235feccceff5
-# ╠═ec39eb10-fe57-11ea-1a17-f5177a3a2bc4
-# ╠═ec2578b0-fe57-11ea-21f9-3d06f046e6c7
-# ╠═ec0dd1fe-fe57-11ea-2bff-8f9c00037c98
-# ╠═df83edf0-02ba-11eb-3f62-b9af925b068d
-# ╠═ebe03252-fe57-11ea-3150-d3945169079b
+# ╠═e72eb300-fe69-11ea-0295-235feccceff5
+# ╟─ec39eb10-fe57-11ea-1a17-f5177a3a2bc4
+# ╟─ec2578b0-fe57-11ea-21f9-3d06f046e6c7
+# ╟─ec0dd1fe-fe57-11ea-2bff-8f9c00037c98
+# ╟─df83edf0-02ba-11eb-3f62-b9af925b068d
+# ╟─ebe03252-fe57-11ea-3150-d3945169079b
 # ╟─eb561abe-fe57-11ea-083b-7926bd86e4e9
-# ╠═51309bb0-fe6a-11ea-04ca-e3b11cbf31f1
+# ╟─51309bb0-fe6a-11ea-04ca-e3b11cbf31f1
 # ╟─25be91a0-02be-11eb-0e62-65deaa359b84
 # ╟─51180aa0-fe6a-11ea-38ed-e157030c325c
 # ╠═d62a5da0-02bc-11eb-37f2-6d919583d571
 # ╟─d60d86d0-02bc-11eb-2056-8b51aea35279
-# ╠═d5f3bd3e-02bc-11eb-05d7-d32bb9a027fc
+# ╟─d5f3bd3e-02bc-11eb-05d7-d32bb9a027fc
 # ╟─d5d9cca0-02bc-11eb-048f-9320b39c74cd
 # ╟─d5bd9212-02bc-11eb-222e-9bed9f96ac54
 # ╟─d5a268f0-02bc-11eb-115b-13534cc0c95e
@@ -234,20 +314,36 @@ RGBX(0.9, 0.9, 0.9)
 # ╟─0af4bdc0-02c0-11eb-30aa-21865c74c6f3
 # ╟─0ad96d8e-02c0-11eb-1546-3534868d4894
 # ╟─0abf7cf0-02c0-11eb-0003-fb78d7a76dc0
-# ╠═0aa58c50-02c0-11eb-1608-d1ec9abe94c6
+# ╟─0aa58c50-02c0-11eb-1608-d1ec9abe94c6
 # ╠═0a8a3c20-02c0-11eb-15e2-6d41dab0deee
 # ╠═0a6ca200-02c0-11eb-0619-c1f7c9c51fb3
-# ╠═0a519ff0-02c0-11eb-31e9-433a6762996c
-# ╠═0a3676d0-02c0-11eb-0510-e7536424f8b7
-# ╠═0a192ace-02c0-11eb-1e3f-b5ff3970f610
-# ╠═09feec10-02c0-11eb-2e6e-0b683abcdd35
-# ╠═09e65b00-02c0-11eb-33d7-99193d98136e
-# ╠═09c9ab40-02c0-11eb-2e14-294da8b643b4
+# ╟─0a519ff0-02c0-11eb-31e9-433a6762996c
+# ╟─b273ab10-031a-11eb-2068-0796513e64c7
+# ╠═96c2e480-031a-11eb-29c3-b97cef4ae152
+# ╟─0a3676d0-02c0-11eb-0510-e7536424f8b7
+# ╟─0a192ace-02c0-11eb-1e3f-b5ff3970f610
+# ╟─09c9ab40-02c0-11eb-2e14-294da8b643b4
 # ╠═09ad70b0-02c0-11eb-1982-7f86a152b7b5
-# ╠═09922080-02c0-11eb-2d95-83e9fbe98d7a
-# ╠═09798f6e-02c0-11eb-09e0-3feb2b5a9048
-# ╠═095bce40-02c0-11eb-309a-7b4fda24cd8c
+# ╟─09922080-02c0-11eb-2d95-83e9fbe98d7a
+# ╟─09798f6e-02c0-11eb-09e0-3feb2b5a9048
+# ╟─095bce40-02c0-11eb-309a-7b4fda24cd8c
 # ╠═0940cc30-02c0-11eb-252c-37c67ae8008e
+# ╠═21609f00-031c-11eb-2c4e-c7f936df961f
+# ╠═2146ae60-031c-11eb-10cf-6d0f7a5519ff
+# ╠═212b3722-031c-11eb-1002-c1d8a1e1cff2
+# ╠═2110d150-031c-11eb-3ed4-4fc761239518
+# ╠═20f53300-031c-11eb-346c-555291725aa3
+# ╠═20d994b0-031c-11eb-2907-453907e22de5
+# ╠═20c23c20-031c-11eb-2436-4314f4dcd2dd
+# ╠═20a676c0-031c-11eb-1099-d1a36f99bf9d
+# ╠═208f935e-031c-11eb-172e-bf3a2463720c
+# ╠═207888f2-031c-11eb-1800-5b0d98072ef8
+# ╠═205c4e60-031c-11eb-1a04-4ba53bbe3cc4
+# ╠═2044cec2-031c-11eb-38c8-d3f806df0607
+# ╠═202ba170-031c-11eb-1cb2-5926b842e1f1
+# ╠═20135e80-031c-11eb-1e42-459731477aa8
+# ╠═1ff83560-031c-11eb-19f0-83458298f9ec
+# ╠═1fde44c0-031c-11eb-33c8-87df48b53597
 # ╟─d527bab0-02bc-11eb-3ef2-61490bf35dab
 # ╠═50fd2fa0-fe6a-11ea-22ea-93ec0773ebd3
 # ╠═50e00ab0-fe6a-11ea-169e-89ce2d5d5e8b
