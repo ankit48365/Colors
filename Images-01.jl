@@ -790,7 +790,7 @@ grant = decimate(process_raw_camera_data(raw_camera_data), 2)
 # ╟─4b26e4e6-e938-11ea-2635-6d4fc15e13b7
 # ╠═41fa85c0-e939-11ea-1ad8-79805a2083bb
 # ╟─c12e0928-e93b-11ea-0922-2b590a99ee89
-# ╟─ff5dc538-e938-11ea-058f-693d6b016640
+# ╠═ff5dc538-e938-11ea-058f-693d6b016640
 # ╠═fbe11200-e938-11ea-12e9-6125c1b56b25
 # ╟─fa24f4a8-e93b-11ea-06bd-25c9672166d6
 # ╠═15ce202e-e939-11ea-2387-93be0ec4cf1f

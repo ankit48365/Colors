@@ -4,6 +4,15 @@
 using Markdown
 using InteractiveUtils
 
+# This Pluto notebook uses @bind for interactivity. When running this notebook outside of Pluto, the following 'mock version' of @bind gives bound variables a default value (instead of an error).
+macro bind(def, element)
+    quote
+        local el = $(esc(element))
+        global $(esc(def)) = Core.applicable(Base.get, el) ? Base.get(el) : missing
+        el
+    end
+end
+
 # ╔═╡ 676fcc70-fe6a-11ea-228a-8f3af1750c03
 
 
@@ -29,6 +38,12 @@ end
 begin
 	Pkg.add(["Images", "ImageIO", "ImageMagick"])
 	using Images
+end
+
+# ╔═╡ 212b3722-031c-11eb-1002-c1d8a1e1cff2
+begin
+	Pkg.add("PlutoUI")
+	using PlutoUI
 end
 
 # ╔═╡ 64efe220-02b9-11eb-33a9-05fc5c343994
@@ -110,12 +125,16 @@ begin
 end
 
 # ╔═╡ d5a268f0-02bc-11eb-115b-13534cc0c95e
-	md"""
-Size of the Peice we just created above:
-	"""
+	md"""Size of the Peice we just created above:	"""
 
 # ╔═╡ d58284e0-02bc-11eb-2b6b-9fc3b786a3c9
 size(Slice)
+
+# ╔═╡ 108d3f70-0363-11eb-1fae-6713f3fef863
+	md"""Original Size was	"""
+
+# ╔═╡ 09aadb90-0363-11eb-165a-23513f34ae99
+size(Tricolor)
 
 # ╔═╡ 0b2d32e0-02c0-11eb-00d7-171f805c6e2d
 md"## Manipulating matrices to Manipulate Images
@@ -202,7 +221,7 @@ end
 
 # ╔═╡ 095bce40-02c0-11eb-309a-7b4fda24cd8c
 md"## Modifying the whole image at once
-**Left this Section for Now**
+**TBD Left this Section for Now**
 - We can use the same trick to modify the whole image at once
 
 - Let's **redify** the image
@@ -211,22 +230,21 @@ md"## Modifying the whole image at once
 "
 
 # ╔═╡ 0940cc30-02c0-11eb-252c-37c67ae8008e
-
+md"**TBD Decimate not working - Need to add some package or import something**"
 
 # ╔═╡ 21609f00-031c-11eb-2c4e-c7f936df961f
-
+Low_Res_Dhwaj = decimate(Slice, 5)
 
 # ╔═╡ 2146ae60-031c-11eb-10cf-6d0f7a5519ff
-
-
-# ╔═╡ 212b3722-031c-11eb-1002-c1d8a1e1cff2
-
+md"## Experiments come alive with interaction
+- We start to get a feel for things when we can **experiment**!
+- Next Sniped we Load --> Pkg.add(PlutoUI-quotes were used?) --> using PlutoUI (to make interaction work)"
 
 # ╔═╡ 2110d150-031c-11eb-3ed4-4fc761239518
-
+@bind repeat_count Slider(1:5, show_value=true)
 
 # ╔═╡ 20f53300-031c-11eb-346c-555291725aa3
-
+repeat(Dhwaj2, repeat_count, repeat_count)
 
 # ╔═╡ 20d994b0-031c-11eb-2907-453907e22de5
 
@@ -289,10 +307,10 @@ RGBX(0.9, 0.9, 0.9)
 # ╠═676fcc70-fe6a-11ea-228a-8f3af1750c03
 # ╟─ec7bfd20-fe57-11ea-11ff-ad7d1063c690
 # ╟─3e2b6a10-02b9-11eb-2026-5b14f80e3d02
-# ╟─ec64cba0-fe57-11ea-0a43-296a76f4e41f
+# ╠═ec64cba0-fe57-11ea-0a43-296a76f4e41f
 # ╟─64efe220-02b9-11eb-33a9-05fc5c343994
-# ╟─ec4ef9b0-fe57-11ea-3218-19d3eb36b629
-# ╠═e72eb300-fe69-11ea-0295-235feccceff5
+# ╠═ec4ef9b0-fe57-11ea-3218-19d3eb36b629
+# ╟─e72eb300-fe69-11ea-0295-235feccceff5
 # ╟─ec39eb10-fe57-11ea-1a17-f5177a3a2bc4
 # ╟─ec2578b0-fe57-11ea-21f9-3d06f046e6c7
 # ╟─ec0dd1fe-fe57-11ea-2bff-8f9c00037c98
@@ -306,9 +324,11 @@ RGBX(0.9, 0.9, 0.9)
 # ╟─d60d86d0-02bc-11eb-2056-8b51aea35279
 # ╟─d5f3bd3e-02bc-11eb-05d7-d32bb9a027fc
 # ╟─d5d9cca0-02bc-11eb-048f-9320b39c74cd
-# ╟─d5bd9212-02bc-11eb-222e-9bed9f96ac54
+# ╠═d5bd9212-02bc-11eb-222e-9bed9f96ac54
 # ╟─d5a268f0-02bc-11eb-115b-13534cc0c95e
-# ╟─d58284e0-02bc-11eb-2b6b-9fc3b786a3c9
+# ╠═d58284e0-02bc-11eb-2b6b-9fc3b786a3c9
+# ╟─108d3f70-0363-11eb-1fae-6713f3fef863
+# ╟─09aadb90-0363-11eb-165a-23513f34ae99
 # ╟─0b2d32e0-02c0-11eb-00d7-171f805c6e2d
 # ╟─0b139060-02c0-11eb-0a67-6920aee627ca
 # ╟─0af4bdc0-02c0-11eb-30aa-21865c74c6f3
@@ -327,12 +347,12 @@ RGBX(0.9, 0.9, 0.9)
 # ╟─09922080-02c0-11eb-2d95-83e9fbe98d7a
 # ╟─09798f6e-02c0-11eb-09e0-3feb2b5a9048
 # ╟─095bce40-02c0-11eb-309a-7b4fda24cd8c
-# ╠═0940cc30-02c0-11eb-252c-37c67ae8008e
+# ╟─0940cc30-02c0-11eb-252c-37c67ae8008e
 # ╠═21609f00-031c-11eb-2c4e-c7f936df961f
-# ╠═2146ae60-031c-11eb-10cf-6d0f7a5519ff
-# ╠═212b3722-031c-11eb-1002-c1d8a1e1cff2
-# ╠═2110d150-031c-11eb-3ed4-4fc761239518
-# ╠═20f53300-031c-11eb-346c-555291725aa3
+# ╟─2146ae60-031c-11eb-10cf-6d0f7a5519ff
+# ╟─212b3722-031c-11eb-1002-c1d8a1e1cff2
+# ╟─2110d150-031c-11eb-3ed4-4fc761239518
+# ╟─20f53300-031c-11eb-346c-555291725aa3
 # ╠═20d994b0-031c-11eb-2907-453907e22de5
 # ╠═20c23c20-031c-11eb-2436-4314f4dcd2dd
 # ╠═20a676c0-031c-11eb-1099-d1a36f99bf9d
