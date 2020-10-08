@@ -13,6 +13,9 @@ macro bind(def, element)
     end
 end
 
+# ╔═╡ 208f935e-031c-11eb-172e-bf3a2463720c
+using TestImages
+
 # ╔═╡ 676fcc70-fe6a-11ea-228a-8f3af1750c03
 
 
@@ -36,7 +39,7 @@ end
 
 # ╔═╡ ec4ef9b0-fe57-11ea-3218-19d3eb36b629
 begin
-	Pkg.add(["Images", "ImageIO", "ImageMagick"])
+	Pkg.add(["Images", "ImageIO", "ImageMagick", "TestImages"])
 	using Images
 end
 
@@ -247,19 +250,12 @@ md"## Experiments come alive with interaction
 repeat(Dhwaj2, repeat_count, repeat_count)
 
 # ╔═╡ 20d994b0-031c-11eb-2907-453907e22de5
-
-
-# ╔═╡ 20c23c20-031c-11eb-2436-4314f4dcd2dd
-
-
-# ╔═╡ 20a676c0-031c-11eb-1099-d1a36f99bf9d
-
-
-# ╔═╡ 208f935e-031c-11eb-172e-bf3a2463720c
-
+md"## 10/5/2020
+- From Here - https://github.com/JuliaImages/ImageInTerminal.jl
+- TestImages was added all the way above"
 
 # ╔═╡ 207888f2-031c-11eb-1800-5b0d98072ef8
-
+testimage("cameraman")
 
 # ╔═╡ 205c4e60-031c-11eb-1a04-4ba53bbe3cc4
 
@@ -353,9 +349,7 @@ RGBX(0.9, 0.9, 0.9)
 # ╟─212b3722-031c-11eb-1002-c1d8a1e1cff2
 # ╟─2110d150-031c-11eb-3ed4-4fc761239518
 # ╟─20f53300-031c-11eb-346c-555291725aa3
-# ╠═20d994b0-031c-11eb-2907-453907e22de5
-# ╠═20c23c20-031c-11eb-2436-4314f4dcd2dd
-# ╠═20a676c0-031c-11eb-1099-d1a36f99bf9d
+# ╟─20d994b0-031c-11eb-2907-453907e22de5
 # ╠═208f935e-031c-11eb-172e-bf3a2463720c
 # ╠═207888f2-031c-11eb-1800-5b0d98072ef8
 # ╠═205c4e60-031c-11eb-1a04-4ba53bbe3cc4
