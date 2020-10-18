@@ -13,6 +13,9 @@ macro bind(def, element)
     end
 end
 
+# ╔═╡ 85e4e2d0-10e4-11eb-0cc7-719689d04ad9
+using Statistics # Anki K added this
+
 # ╔═╡ 83eb9ca0-ed68-11ea-0bc5-99a09c68f867
 md"_homework 1, version 4_"
 
@@ -222,8 +225,8 @@ md"""
 
 # ╔═╡ f6898df6-ee07-11ea-2838-fde9bc739c11
 function mean_colors(image)
-	
-	return missing
+
+	return 	missing
 end
 
 # ╔═╡ d75ec078-ee0d-11ea-3723-71fb8eecb040
@@ -389,6 +392,12 @@ philip = let
 	original = Images.load(philip_file)
 	decimate(original, 8)
 end
+
+# ╔═╡ 865e8a30-10e5-11eb-2f4b-3ff87e254b50
+typeof(philip)
+
+# ╔═╡ 8f3236c0-10e5-11eb-0ad9-39cfca6437b9
+size(philip)
 
 # ╔═╡ 5be9b144-ee0d-11ea-2a8d-8775de265a1d
 mean_colors(philip)
@@ -959,7 +968,7 @@ else
 	end
 end
 
-# ╔═╡ 4d0158d0-ee0d-11ea-17c3-c169d4284acb
+# ╔═╡ 8be9a2d0-10e2-11eb-2ed8-47888581f2c2
 if !@isdefined(mean_colors)
 	not_defined(:mean_colors)
 else
@@ -1402,9 +1411,12 @@ with_sobel_edge_detect(sobel_camera_image)
 # ╠═c8ecfe5c-ee05-11ea-322b-4b2714898831
 # ╟─e86ed944-ee05-11ea-3e0f-d70fc73b789c
 # ╟─c54ccdea-ee05-11ea-0365-23aaf053b7d7
+# ╠═85e4e2d0-10e4-11eb-0cc7-719689d04ad9
+# ╠═865e8a30-10e5-11eb-2f4b-3ff87e254b50
+# ╠═8f3236c0-10e5-11eb-0ad9-39cfca6437b9
 # ╠═f6898df6-ee07-11ea-2838-fde9bc739c11
 # ╠═5be9b144-ee0d-11ea-2a8d-8775de265a1d
-# ╟─4d0158d0-ee0d-11ea-17c3-c169d4284acb
+# ╟─8be9a2d0-10e2-11eb-2ed8-47888581f2c2
 # ╠═d75ec078-ee0d-11ea-3723-71fb8eecb040
 # ╟─f68d4a36-ee07-11ea-0832-0360530f102e
 # ╠═f6991a50-ee07-11ea-0bc4-1d68eb028e6a

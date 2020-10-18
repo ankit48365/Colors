@@ -4,6 +4,9 @@
 using Markdown
 using InteractiveUtils
 
+# ╔═╡ 11cdad30-10e1-11eb-0761-4181b97481a8
+using Statistics
+
 # ╔═╡ c35e0efe-100e-11eb-0f2f-178bcf665b41
 begin
 	import Pkg
@@ -71,12 +74,45 @@ usflsmall[20:30,10:20,1]
 usflsmall[25,25]
 
 # ╔═╡ fd360ba0-1014-11eb-3a59-b7599a434aec
+md"""
+#### Exercise 2.1
+👉 Write a function **`mean_colors`** that accepts an object called `image`. It should calculate the mean (average) amounts of red, green and blue in the image and return a tuple `(r, g, b)` of those means.
+"""
+
+# ╔═╡ 12176060-10e1-11eb-2035-936ab2404587
+#[ mean(float.(c.(img))) for c = [red,green,blue], img = [usflsmall] ]
+
+# ╔═╡ 11e44270-10e1-11eb-02d3-d10adc187074
+#mean(float.(red.(usflsmall))) 
+
+# ╔═╡ 11b60680-10e1-11eb-33bc-6f416cadb5dd
+function mean_colors(image)
+	missing = [ mean(float.(c.(img))) for c = [red,green,blue], img = [image] ]
+	return 	missing
+end
+
+# ╔═╡ 11a0f7e0-10e1-11eb-0306-914b8bedeb72
+mean_colors(usflsmall)
+
+# ╔═╡ 9dcaa230-10e5-11eb-2b81-31318eda5ab0
+typeof(usflsmall)
+
+# ╔═╡ 118a62a0-10e1-11eb-362f-6f7ea7877251
+size(usflsmall)
+
+# ╔═╡ 1173cd60-10e1-11eb-0bed-196ed41f75fb
 
 
-# ╔═╡ c890a32e-1012-11eb-2268-37b5474fac46
-"C:\\Users\\ankit\\AppData\\Local\\Temp\\jl_0rWbvyH0b1"
+# ╔═╡ 115b3c50-10e1-11eb-33d4-8b33fcb585bf
 
-# ╔═╡ c85a29e0-1012-11eb-36f0-51dcefa74bc4
+
+# ╔═╡ 1142ab40-10e1-11eb-2eec-39cfe8b06c73
+
+
+# ╔═╡ 11353dc2-10e1-11eb-1ab8-67c8d170a5fe
+
+
+# ╔═╡ 110a0f0e-10e1-11eb-319f-af3611722baf
 
 
 # ╔═╡ c81fb8ee-1012-11eb-00a8-75af624da43b
@@ -102,7 +138,17 @@ usflsmall[25,25]
 # ╠═c8c39a10-1012-11eb-321c-c5bd5e28f744
 # ╠═fd9e9170-1014-11eb-29b4-77028101ab8f
 # ╠═fd6977b0-1014-11eb-3e6c-adf2e39e42b4
-# ╠═fd360ba0-1014-11eb-3a59-b7599a434aec
-# ╠═c890a32e-1012-11eb-2268-37b5474fac46
-# ╠═c85a29e0-1012-11eb-36f0-51dcefa74bc4
+# ╟─fd360ba0-1014-11eb-3a59-b7599a434aec
+# ╠═12176060-10e1-11eb-2035-936ab2404587
+# ╠═11e44270-10e1-11eb-02d3-d10adc187074
+# ╠═11cdad30-10e1-11eb-0761-4181b97481a8
+# ╠═11b60680-10e1-11eb-33bc-6f416cadb5dd
+# ╠═11a0f7e0-10e1-11eb-0306-914b8bedeb72
+# ╠═9dcaa230-10e5-11eb-2b81-31318eda5ab0
+# ╠═118a62a0-10e1-11eb-362f-6f7ea7877251
+# ╠═1173cd60-10e1-11eb-0bed-196ed41f75fb
+# ╠═115b3c50-10e1-11eb-33d4-8b33fcb585bf
+# ╠═1142ab40-10e1-11eb-2eec-39cfe8b06c73
+# ╠═11353dc2-10e1-11eb-1ab8-67c8d170a5fe
+# ╠═110a0f0e-10e1-11eb-319f-af3611722baf
 # ╠═c81fb8ee-1012-11eb-00a8-75af624da43b
