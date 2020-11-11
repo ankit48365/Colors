@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.12.4
+# v0.12.7
 
 using Markdown
 using InteractiveUtils
@@ -101,10 +101,10 @@ typeof(usflsmall)
 size(usflsmall)
 
 # ╔═╡ 1173cd60-10e1-11eb-0bed-196ed41f75fb
-
+US_Flag01
 
 # ╔═╡ 115b3c50-10e1-11eb-33d4-8b33fcb585bf
-
+display(usflsmall
 
 # ╔═╡ 1142ab40-10e1-11eb-2eec-39cfe8b06c73
 
@@ -126,7 +126,7 @@ size(usflsmall)
 # ╟─488c2820-1013-11eb-3aeb-597f0f1bf852
 # ╟─10e51870-1011-11eb-1781-3984a2cf5e94
 # ╟─8bba0860-1013-11eb-11f5-6dbba1917f11
-# ╟─d16cb100-100e-11eb-1fb8-bf916eb323f1
+# ╠═d16cb100-100e-11eb-1fb8-bf916eb323f1
 # ╟─9f3a4030-1013-11eb-2644-ef11c2ca7ab5
 # ╠═09439860-1013-11eb-0f92-db4886864291
 # ╠═d12f0bc0-100e-11eb-2a60-17ab6eedc7d8
