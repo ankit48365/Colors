@@ -71,10 +71,79 @@ typeof(BnW011)
 # ╔═╡ acaf1250-248f-11eb-347e-39cd376a6085
 channelview(BnW01), [2,3,1]
 
-# ╔═╡ ac93e930-248f-11eb-3285-f97594db68bc
-red.(channelview(BnW01), [2,3,1])
+# ╔═╡ 59fa9500-255e-11eb-0951-bbdbeb5c013d
+md"""below will display a pixel of an image"""
+
+# ╔═╡ 2705d7e0-255e-11eb-2f48-b7a48c280ddf
+CD = BnW01[1,2]
+
+# ╔═╡ 74ec9f70-255e-11eb-240f-cd14eca7c3d2
+dump(c24)
+
+# ╔═╡ 74d2aed0-255e-11eb-112d-256463b71abe
+c24.color
+
+# ╔═╡ 26d048f0-255e-11eb-308d-69e7a209938e
+RGB24(RGB(1, 0, 0)).color
+
+# ╔═╡ 32f91e80-255f-11eb-022f-d94070720a5f
+s,d = size(BnW01)
+
+# ╔═╡ 3233aba0-255f-11eb-2605-bfbe991e6337
+begin 
+	 W01[1:s, 1:d] .= RGB24(BnW01[1:s, 1:d]).color
+end
+
+# ╔═╡ 6b882f20-255f-11eb-32a7-b7763bb7cb17
+RGB24(BnW01).color
+
+# ╔═╡ 6b6e3e80-255f-11eb-2cc9-cb60bafc3512
+
+
+# ╔═╡ 6b5649b0-255f-11eb-10ba-c766f8e6c4cd
+
+
+# ╔═╡ 26b51fd0-255e-11eb-0be7-39c12681a6bb
+begin 
+	Dhwaj2 = copy(Tricolor)
+	Dhwaj2[70:90, 70:110] .= RGB(0, 1, 1)
+	Dhwaj2
+end
+
+# ╔═╡ 2698e540-255e-11eb-2306-6996fa3150f8
+
+
+# ╔═╡ 26800612-255e-11eb-362e-c7b1e43fb2a6
+
 
 # ╔═╡ ac79d180-248f-11eb-319b-0d04957afbf2
+
+
+# ╔═╡ e4d06160-255d-11eb-3f63-490f5332f468
+
+
+# ╔═╡ e4b5ad70-255d-11eb-1648-7730c93b2e33
+
+
+# ╔═╡ e49a844e-255d-11eb-3135-79f1bcb5ad8a
+
+
+# ╔═╡ e4817e10-255d-11eb-007e-41de1bb4d68c
+
+
+# ╔═╡ e263f540-255d-11eb-15c1-438852517e77
+
+
+# ╔═╡ e248cc20-255d-11eb-3cd7-dbfa1460d37f
+
+
+# ╔═╡ e22edb80-255d-11eb-09fe-aff782cd12bf
+
+
+# ╔═╡ e22eb470-255d-11eb-190b-bf34def0f996
+
+
+# ╔═╡ e1ffdc40-255d-11eb-0c3b-7198c874ff3a
 
 
 # ╔═╡ 9c361c80-248e-11eb-02fc-33e6ab8801bf
@@ -100,16 +169,22 @@ md"""https://craftofcoding.wordpress.com/2017/03/25/plotting-image-histograms-wi
 md"""In julia, you can just say convert(Gray, rgb)"""
 
 # ╔═╡ 3d950e30-247e-11eb-2fa2-f7f1c1bc5c7f
-
+md"""https://docs.julialang.org/en/v1/base/numbers/"""
 
 # ╔═╡ 3d7af680-247e-11eb-29ea-231b8b849389
-
+md"""https://github.com/JuliaGraphics/ColorTypes.jl"""
 
 # ╔═╡ 3d0c0810-247e-11eb-040c-77c7433ccedd
 
 
 # ╔═╡ 3c636c00-247e-11eb-369c-cde034bcdd36
 
+
+# ╔═╡ 584766c0-255e-11eb-03be-b17de3aacabc
+c24 = RGB24(c); dump(c24)
+
+# ╔═╡ 75069010-255e-11eb-0bbd-f9f4a97cc8f6
+c24 = RGB24(CD)
 
 # ╔═╡ Cell order:
 # ╠═f5780e90-247d-11eb-04d0-75c1e456dc12
@@ -132,8 +207,31 @@ md"""In julia, you can just say convert(Gray, rgb)"""
 # ╠═c78327c0-247f-11eb-0020-09c5507187ba
 # ╠═c752a1e0-247f-11eb-246a-ffb8fb0dbae5
 # ╠═acaf1250-248f-11eb-347e-39cd376a6085
-# ╠═ac93e930-248f-11eb-3285-f97594db68bc
+# ╟─59fa9500-255e-11eb-0951-bbdbeb5c013d
+# ╠═2705d7e0-255e-11eb-2f48-b7a48c280ddf
+# ╠═75069010-255e-11eb-0bbd-f9f4a97cc8f6
+# ╠═74ec9f70-255e-11eb-240f-cd14eca7c3d2
+# ╠═74d2aed0-255e-11eb-112d-256463b71abe
+# ╠═584766c0-255e-11eb-03be-b17de3aacabc
+# ╠═26d048f0-255e-11eb-308d-69e7a209938e
+# ╠═32f91e80-255f-11eb-022f-d94070720a5f
+# ╠═3233aba0-255f-11eb-2605-bfbe991e6337
+# ╠═6b882f20-255f-11eb-32a7-b7763bb7cb17
+# ╠═6b6e3e80-255f-11eb-2cc9-cb60bafc3512
+# ╠═6b5649b0-255f-11eb-10ba-c766f8e6c4cd
+# ╠═26b51fd0-255e-11eb-0be7-39c12681a6bb
+# ╠═2698e540-255e-11eb-2306-6996fa3150f8
+# ╠═26800612-255e-11eb-362e-c7b1e43fb2a6
 # ╠═ac79d180-248f-11eb-319b-0d04957afbf2
+# ╠═e4d06160-255d-11eb-3f63-490f5332f468
+# ╠═e4b5ad70-255d-11eb-1648-7730c93b2e33
+# ╠═e49a844e-255d-11eb-3135-79f1bcb5ad8a
+# ╠═e4817e10-255d-11eb-007e-41de1bb4d68c
+# ╠═e263f540-255d-11eb-15c1-438852517e77
+# ╠═e248cc20-255d-11eb-3cd7-dbfa1460d37f
+# ╠═e22edb80-255d-11eb-09fe-aff782cd12bf
+# ╠═e22eb470-255d-11eb-190b-bf34def0f996
+# ╠═e1ffdc40-255d-11eb-0c3b-7198c874ff3a
 # ╠═9c361c80-248e-11eb-02fc-33e6ab8801bf
 # ╠═9c1b1a6e-248e-11eb-395c-db91bf6eee0a
 # ╠═9c00b4a0-248e-11eb-382f-e9b74cb77e12
@@ -141,7 +239,7 @@ md"""In julia, you can just say convert(Gray, rgb)"""
 # ╟─3de2e010-247e-11eb-38d8-6b8bffd99436
 # ╟─3dc8ef70-247e-11eb-376b-05ad5147ca85
 # ╟─3db01042-247e-11eb-2f66-dfc3c4e9e7bc
-# ╠═3d950e30-247e-11eb-2fa2-f7f1c1bc5c7f
-# ╠═3d7af680-247e-11eb-29ea-231b8b849389
+# ╟─3d950e30-247e-11eb-2fa2-f7f1c1bc5c7f
+# ╟─3d7af680-247e-11eb-29ea-231b8b849389
 # ╠═3d0c0810-247e-11eb-040c-77c7433ccedd
 # ╠═3c636c00-247e-11eb-369c-cde034bcdd36
