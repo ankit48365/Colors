@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.12.7
+# v0.12.10
 
 using Markdown
 using InteractiveUtils
@@ -180,11 +180,11 @@ md"""https://github.com/JuliaGraphics/ColorTypes.jl"""
 # ╔═╡ 3c636c00-247e-11eb-369c-cde034bcdd36
 
 
-# ╔═╡ 584766c0-255e-11eb-03be-b17de3aacabc
-c24 = RGB24(c); dump(c24)
-
 # ╔═╡ 75069010-255e-11eb-0bbd-f9f4a97cc8f6
 c24 = RGB24(CD)
+
+# ╔═╡ 584766c0-255e-11eb-03be-b17de3aacabc
+c24 = RGB24(c); dump(c24)
 
 # ╔═╡ Cell order:
 # ╠═f5780e90-247d-11eb-04d0-75c1e456dc12

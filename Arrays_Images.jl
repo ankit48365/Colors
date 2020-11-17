@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.12.7
+# v0.12.10
 
 using Markdown
 using InteractiveUtils
@@ -92,7 +92,7 @@ md"""## Color  """
 md""" Just like Gray above, lets create Colors """
 
 # ╔═╡ 1ba4ad20-2623-11eb-389b-6dcae19e4231
-imgCo = rand(RGB{Float32}, 4,4)::
+imgCo = rand(RGB{Float32}, 4,4)
 
 # ╔═╡ 618bb38e-261b-11eb-22d4-0103c306cd44
 md""" just like gray in REPL or ijulia, you can see actual value by 2 below ways::
@@ -114,6 +114,9 @@ md""" just like gray in REPL or ijulia, you can see actual value by 2 below ways
 # ╔═╡ 61708a70-261b-11eb-297b-fd97c2c077ce
 md""" ## Changing the Color System
  - Gray to RGB to single 32 bit integer to Hexadecmimal"""
+
+# ╔═╡ 52455f10-2843-11eb-265b-c1322c5ca60c
+typeof(imgCo)
 
 # ╔═╡ d504c5b0-2624-11eb-186c-3bbcf1fb6646
 Z = imgCo[1,1]
@@ -142,8 +145,20 @@ size(Zz)
 # ╔═╡ acc3551e-2625-11eb-186d-2fba05178818
 typeof(Zz)
 
-# ╔═╡ acab6050-2625-11eb-19ee-b777a446a886
-Zz32 = RGB24(Zz)
+# ╔═╡ c9532720-2840-11eb-17f8-c1e7c3c40bc4
+h24 = (ColorTypes.RGB24,4,4)
+
+# ╔═╡ c8e8cc90-2840-11eb-21bf-1be76876201a
+typeof(h24)
+
+# ╔═╡ eb5cb260-2844-11eb-0fd2-39f843b20acb
+dump(h24)
+
+# ╔═╡ 8aa54960-2843-11eb-34a3-cd61b7a8ab5b
+convert(RGB24, Zz)
+
+# ╔═╡ 8a457620-2843-11eb-3523-5d9e02a7be18
+
 
 # ╔═╡ 613b2290-261b-11eb-163a-716d474caac2
 md"""  """
@@ -193,6 +208,7 @@ md"""  """
 # ╠═1ba4ad20-2623-11eb-389b-6dcae19e4231
 # ╟─618bb38e-261b-11eb-22d4-0103c306cd44
 # ╟─61708a70-261b-11eb-297b-fd97c2c077ce
+# ╠═52455f10-2843-11eb-265b-c1322c5ca60c
 # ╠═d504c5b0-2624-11eb-186c-3bbcf1fb6646
 # ╠═4267b3b0-2625-11eb-193e-a7df86622626
 # ╟─d4eeccb0-2624-11eb-16eb-a3ef4a77dae8
@@ -202,7 +218,11 @@ md"""  """
 # ╠═acf47740-2625-11eb-2e08-0b417cd3168d
 # ╠═acdbbf20-2625-11eb-1dbf-5b3c9500349a
 # ╠═acc3551e-2625-11eb-186d-2fba05178818
-# ╠═acab6050-2625-11eb-19ee-b777a446a886
+# ╠═c9532720-2840-11eb-17f8-c1e7c3c40bc4
+# ╠═c8e8cc90-2840-11eb-21bf-1be76876201a
+# ╠═eb5cb260-2844-11eb-0fd2-39f843b20acb
+# ╠═8aa54960-2843-11eb-34a3-cd61b7a8ab5b
+# ╠═8a457620-2843-11eb-3523-5d9e02a7be18
 # ╠═613b2290-261b-11eb-163a-716d474caac2
 # ╠═612131f0-261b-11eb-1531-6151f1d6b715
 # ╠═61074150-261b-11eb-02d1-f93b12397a68
