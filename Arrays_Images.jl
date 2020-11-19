@@ -148,20 +148,29 @@ typeof(Zz)
 # ╔═╡ c9532720-2840-11eb-17f8-c1e7c3c40bc4
 h24 = (ColorTypes.RGB24,4,4)
 
-# ╔═╡ c8e8cc90-2840-11eb-21bf-1be76876201a
-typeof(h24)
-
-# ╔═╡ eb5cb260-2844-11eb-0fd2-39f843b20acb
-dump(h24)
-
-# ╔═╡ 8aa54960-2843-11eb-34a3-cd61b7a8ab5b
-convert(RGB24, Zz)
-
 # ╔═╡ 8a457620-2843-11eb-3523-5d9e02a7be18
+ YAY9 = parse.(UInt32, hex.(Zz, :RRGGBBAA), base=16)
+
+# ╔═╡ ac6e3980-2a05-11eb-2943-ab113feb9d24
+YAY9_chop = parse.(UInt32, hex.(Zz, :RRGGBB), base=16)
+
+# ╔═╡ 38e18a40-29fa-11eb-3207-bfc24ffd9794
+YAY91 = reshape(YAY9, (1,16))
+
+# ╔═╡ 38c6fd60-29fa-11eb-16dc-71c3addb6d1e
+YAY92 = chomp(str)
+
+# ╔═╡ 38ad33d0-29fa-11eb-0963-75596aa85cac
+
+
+# ╔═╡ 38ace5b0-29fa-11eb-3d71-09e0b16dce31
+
+
+# ╔═╡ 387d7140-29fa-11eb-00ff-abdaad584701
 
 
 # ╔═╡ 613b2290-261b-11eb-163a-716d474caac2
-md"""  """
+md"""## Our Numbers 0-9 makes the basic Base 10 number system  """
 
 # ╔═╡ 612131f0-261b-11eb-1531-6151f1d6b715
 md"""  """
@@ -219,10 +228,13 @@ md"""  """
 # ╠═acdbbf20-2625-11eb-1dbf-5b3c9500349a
 # ╠═acc3551e-2625-11eb-186d-2fba05178818
 # ╠═c9532720-2840-11eb-17f8-c1e7c3c40bc4
-# ╠═c8e8cc90-2840-11eb-21bf-1be76876201a
-# ╠═eb5cb260-2844-11eb-0fd2-39f843b20acb
-# ╠═8aa54960-2843-11eb-34a3-cd61b7a8ab5b
 # ╠═8a457620-2843-11eb-3523-5d9e02a7be18
+# ╠═ac6e3980-2a05-11eb-2943-ab113feb9d24
+# ╠═38e18a40-29fa-11eb-3207-bfc24ffd9794
+# ╠═38c6fd60-29fa-11eb-16dc-71c3addb6d1e
+# ╠═38ad33d0-29fa-11eb-0963-75596aa85cac
+# ╠═38ace5b0-29fa-11eb-3d71-09e0b16dce31
+# ╠═387d7140-29fa-11eb-00ff-abdaad584701
 # ╠═613b2290-261b-11eb-163a-716d474caac2
 # ╠═612131f0-261b-11eb-1531-6151f1d6b715
 # ╠═61074150-261b-11eb-02d1-f93b12397a68

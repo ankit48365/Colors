@@ -137,13 +137,22 @@ typeof(imgPNG)
 # ╔═╡ da23bc90-2872-11eb-2ec7-7be9de168f09
 channelview(imgPNG)
 
+# ╔═╡ d8e44550-29ff-11eb-2694-4d399d9fed8e
+size(imgPNG)
+
 # ╔═╡ 605300c0-2871-11eb-2777-89cfcfd09ae6
 YAY1 = RGB24.(imgPNG)
 
-# ╔═╡ 4e1a83d0-2874-11eb-1f1e-4165ec132122
-YAY1.color
-
 # ╔═╡ 4dffa8ce-2874-11eb-316d-27352df40430
+ YAY3 = parse.(UInt32, hex.(imgPNG, :RRGGBBAA), base=16)
+
+# ╔═╡ 719372e0-29ff-11eb-3bdb-1b055026907d
+YAY4 = reshape(YAY3, (1,16))
+
+# ╔═╡ 717f75b0-29ff-11eb-35ae-538dfc5fa50f
+run(`echo hello!`)
+
+# ╔═╡ 716536f0-29ff-11eb-1134-2907e44207b4
 
 
 # ╔═╡ 4de73ed0-2874-11eb-19db-2b929f47e1ff
@@ -171,7 +180,51 @@ channelview(YAY1)
 
 
 # ╔═╡ 5fe17a40-2871-11eb-117b-950068345b4e
+md"""## Understanding Colors Bases System
 
+- Base 10 is our Numbers 0-9. 
+- Base 16 is [0 1 2 3 4 5 6 7 8 9 a b c d e f ] (A-F equals 10-15)
+
+
+"""
+
+# ╔═╡ 6644ed30-29fd-11eb-39d9-eb3d3f96751f
+md"""So 255 in Hexa would be explained as in a 15 number system as - 15*16 = 240 and 15*1 = 15 and 240+15 = 255, and fifteen is F, so 255 is FF """
+
+# ╔═╡ 662641a0-29fd-11eb-15bb-19fe09bccd88
+md"""So white is 255,255,255 so in hex it would be #FFFFFF"""
+
+# ╔═╡ 660d6270-29fd-11eb-1867-e3ef33c0b59c
+md"""in hex if we have pairs like #999999 or #FFFFFF, then we can just use one per pair as #999 or #FFF"""
+
+# ╔═╡ 512e7da0-2a00-11eb-26f6-b373f0612fa9
+md"""## Understanding the last AA in  #rrggbbaa color notation
+The value of alpha in the new hex notation would range from 00 to FF where 00 is the minimum value i.e 0% and FF is the max value which would be 100% opacity.
+
+If you're aware of hexadecimal calculations, you'll easily be able to calculate the value of alpha based on the percentage of opacity that you need.
+
+Calculating the hex code for 50% Alpha
+
+Since the decimal values for opacity range from 0 to 255, in a traditional rgb notation; the value for 50% opacity would be 127, and hexadecimal value for this would be 7F
+
+Here are some hex values that I get to see on a daily basis:
+
+0% - 00
+
+10% - 1A,
+
+25% - 40,
+
+50% - 7F,
+
+75% - BF,
+
+100% - FF"""
+
+# ╔═╡ 65f23950-29fd-11eb-2dbc-ddef7cb4e594
+md"""Explains changing bases, base 2 to 10, 16 etc
+
+https://en.wikibooks.org/wiki/Introducing_Julia/Strings_and_characters"""
 
 # ╔═╡ 5fc69f40-2871-11eb-03cb-e9aee3fcadee
 red1 = RGB(1, 0, 0)
@@ -217,9 +270,12 @@ channelview(red1), [2,3,1]
 # ╠═60797482-2871-11eb-1788-2d086011ea08
 # ╠═605e7270-2871-11eb-2eb6-1f29fbb7673a
 # ╠═da23bc90-2872-11eb-2ec7-7be9de168f09
+# ╠═d8e44550-29ff-11eb-2694-4d399d9fed8e
 # ╠═605300c0-2871-11eb-2777-89cfcfd09ae6
-# ╠═4e1a83d0-2874-11eb-1f1e-4165ec132122
 # ╠═4dffa8ce-2874-11eb-316d-27352df40430
+# ╠═719372e0-29ff-11eb-3bdb-1b055026907d
+# ╠═717f75b0-29ff-11eb-35ae-538dfc5fa50f
+# ╠═716536f0-29ff-11eb-1134-2907e44207b4
 # ╠═4de73ed0-2874-11eb-19db-2b929f47e1ff
 # ╠═08ea43e0-2874-11eb-0c58-4fd45c736a58
 # ╠═602b0660-2871-11eb-1ffe-f3d473c96054
@@ -228,7 +284,12 @@ channelview(red1), [2,3,1]
 # ╠═03ebbb30-2874-11eb-1aca-cb82b241fd90
 # ╠═03d3030e-2874-11eb-1765-c505cb92efb1
 # ╠═03b7b2e0-2874-11eb-0bc4-1bccae2c986c
-# ╠═5fe17a40-2871-11eb-117b-950068345b4e
+# ╟─5fe17a40-2871-11eb-117b-950068345b4e
+# ╟─6644ed30-29fd-11eb-39d9-eb3d3f96751f
+# ╟─662641a0-29fd-11eb-15bb-19fe09bccd88
+# ╟─660d6270-29fd-11eb-1867-e3ef33c0b59c
+# ╟─512e7da0-2a00-11eb-26f6-b373f0612fa9
+# ╟─65f23950-29fd-11eb-2dbc-ddef7cb4e594
 # ╠═5fc69f40-2871-11eb-03cb-e9aee3fcadee
 # ╠═5fae5c50-2871-11eb-0636-95066c1ad99b
 # ╠═5f95f250-2871-11eb-2a23-0d38013f9ff2
