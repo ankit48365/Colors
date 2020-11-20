@@ -24,6 +24,13 @@ begin
 	using TestImages
 end
 
+# ╔═╡ 96de8290-2ac9-11eb-26c9-7b604f9321b4
+begin
+	ENV["PYTHON"]=""
+	Pkg.add("PyPlot")
+	using PyPlot
+end
+
 # ╔═╡ dba26b1e-2863-11eb-029f-29cc35edd5b5
 md"""https://juliaimages.org/stable/install/
 
@@ -114,13 +121,38 @@ md"""## Color conversions are construction/view"""
 change the Gorilla image - img1 into grayscale
 
 # ╔═╡ 60e49260-2871-11eb-2bd5-870f0080d3cf
-Gray.(img1)
+GrayGori = Gray.(img1)
 
 # ╔═╡ 60c9de70-2871-11eb-14ef-2144139c568b
 YAY = RGB24.(img1)
 
 # ╔═╡ 718a8ba0-2872-11eb-029d-115fb5593f4f
 typeof(img1)
+
+# ╔═╡ c6cf0060-2ac9-11eb-0603-dd171d023a6e
+md"""## Matplotlib plotting from Python
+This module provides a Julia interface to the Matplotlib plotting library from Python, and specifically to the matplotlib.pyplot module.
+
+PyPlot uses the Julia PyCall package to call Matplotlib directly from Julia with little or no overhead (arrays are passed without making a copy)."""
+
+# ╔═╡ 96c1f9e0-2ac9-11eb-2f3c-113d0494607c
+Pkg.add("PyPlot")
+
+# ╔═╡ 967b7b02-2ac9-11eb-0ba2-3796f545c9e1
+
+
+# ╔═╡ 5a370382-2ac9-11eb-283a-619dc0e644be
+function plotHist(hst, show=false)
+
+    PyPlot.plot(hst)
+    PyPlot.xlabel("Intensities")
+    PyPlot.xlim([0, 256])
+    PyPlot.yticks([])
+    if (show)
+        PyPlot.show()
+    end
+    PyPlot.savefig("img1")
+end
 
 # ╔═╡ c953f430-2871-11eb-2b2a-b38914ba0441
 md"""the above was a success , maybe it works on PNG image with ease, let me retry this on my own PNG image"""
@@ -145,6 +177,9 @@ YAY1 = RGB24.(imgPNG)
 
 # ╔═╡ 4dffa8ce-2874-11eb-316d-27352df40430
  YAY3 = parse.(UInt32, hex.(imgPNG, :RRGGBBAA), base=16)
+
+# ╔═╡ f4e07740-2ac4-11eb-1027-513fa1cbb82a
+ YAY3_A = parse.(UInt32, hex.(imgPNG, :RRGGBB), base=16)
 
 # ╔═╡ 719372e0-29ff-11eb-3bdb-1b055026907d
 YAY4 = reshape(YAY3, (1,16))
@@ -265,6 +300,11 @@ channelview(red1), [2,3,1]
 # ╠═60e49260-2871-11eb-2bd5-870f0080d3cf
 # ╠═60c9de70-2871-11eb-14ef-2144139c568b
 # ╠═718a8ba0-2872-11eb-029d-115fb5593f4f
+# ╠═c6cf0060-2ac9-11eb-0603-dd171d023a6e
+# ╠═96de8290-2ac9-11eb-26c9-7b604f9321b4
+# ╠═96c1f9e0-2ac9-11eb-2f3c-113d0494607c
+# ╠═967b7b02-2ac9-11eb-0ba2-3796f545c9e1
+# ╠═5a370382-2ac9-11eb-283a-619dc0e644be
 # ╟─c953f430-2871-11eb-2b2a-b38914ba0441
 # ╠═60942870-2871-11eb-3afe-bb30d05c71ba
 # ╠═60797482-2871-11eb-1788-2d086011ea08
@@ -273,6 +313,7 @@ channelview(red1), [2,3,1]
 # ╠═d8e44550-29ff-11eb-2694-4d399d9fed8e
 # ╠═605300c0-2871-11eb-2777-89cfcfd09ae6
 # ╠═4dffa8ce-2874-11eb-316d-27352df40430
+# ╠═f4e07740-2ac4-11eb-1027-513fa1cbb82a
 # ╠═719372e0-29ff-11eb-3bdb-1b055026907d
 # ╠═717f75b0-29ff-11eb-35ae-538dfc5fa50f
 # ╠═716536f0-29ff-11eb-1134-2907e44207b4
