@@ -11,3 +11,5 @@ To Do List - Created 11/11/2020
   3. Play with all 3 properties of Colors
   4. Shapes with Colors
 
+pip freeze > requirements.txt
+pip install -r requirements.txt
